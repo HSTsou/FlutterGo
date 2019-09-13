@@ -5,6 +5,7 @@ import 'dart:convert' show json;
 import 'DiamondBorder.dart';
 import 'package:flutter_go/network/youtubeAPIService.dart';
 import 'package:flutter_go/features/login/googleLoginButton.dart';
+import 'package:flutter_go/features/videoAlbumList/videoAlbum.dart';
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: [
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _googleSignIn.onCurrentUserChanged.listen((GoogleSignInAccount account) {
-      print(account);
+      print('onCurrentUserChanged ${account.authentication}');
       setState(() {
         _currentUser = account;
       });
@@ -51,7 +52,24 @@ class _MyHomePageState extends State<MyHomePage> {
         _handleGetContact();
       }
     });
-    _googleSignIn.signInSilently();
+    _googleSignIn.signInSilently().then((result) {
+      result.authentication.then((googleKey) {
+        print('signInSilently accessToken = ' + googleKey.accessToken);
+        setState(() {
+          if (googleKey.accessToken != null) {
+            _accessToken = googleKey.accessToken;
+            goolgeLoginButtonText = "Logout";
+          }
+        });
+
+        // getYoutubePlayList(googleKey.accessToken);
+      }).catchError((err) {
+        print('inner error');
+      });
+    }).catchError((err) {
+      print('error occured');
+    });
+    ;
   }
 
   Future<void> _handleGetContact() async {
@@ -131,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }
           });
 
-          getYoutubePlayList(googleKey.accessToken);
+          // getYoutubePlayList(googleKey.accessToken);
         }).catchError((err) {
           print('inner error');
         });
@@ -141,6 +159,14 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (error) {
       print(error);
     }
+  }
+
+  void _navigateVideoAlbum(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => VideoAlbumList(accessToken: _accessToken)),
+    );
   }
 
   @override
@@ -160,7 +186,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _handleSignIn,
+        onPressed: () {
+          _navigateVideoAlbum(context);
+        },
         tooltip: 'Increment',
         child: Icon(Icons.library_music),
         shape: DiamondBorder(),
