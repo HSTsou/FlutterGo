@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/model/playList.dart';
 import 'package:flutter_go/model/playListItem.dart';
 import 'package:flutter_go/network/youtubeAPIService.dart';
+import 'package:flutter_go/widgets/webviewYoutubePlayer.dart';
 
 class VideoListItem extends StatefulWidget {
   VideoListItem({Key key, this.playListId}) : super(key: key);
@@ -39,6 +40,15 @@ class _VideoListItemState extends State<VideoListItem> {
     // navigate to the next screen.
     var id = _playListItem.items[index].snippet.resourceId.videoId;
     print('onTapped playListItem video id = $id');
+    _navigateYTPlayer(id);
+  }
+
+  void _navigateYTPlayer(String videoId) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => WebViewContainer(videoId: videoId)),
+    );
   }
 
   @override

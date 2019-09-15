@@ -17,4 +17,5 @@ dependencies: \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterCallbackCache.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterAppDelegate.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/Flutter.h \
-  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/google_sign_in/GoogleSignInPlugin.h
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/google_sign_in/GoogleSignInPlugin.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/WebViewFlutterPlugin.h
