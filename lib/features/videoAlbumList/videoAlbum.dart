@@ -62,7 +62,9 @@ class _VideoAlbumListState extends State<VideoAlbumList> {
 
               var data = _playList.items[index];
 
-              return ClipRRect(
+              return Wrap(
+                children: <Widget>[
+                  ClipRRect(
                   borderRadius: BorderRadius.circular(5.0),
                   child: DecoratedBox(
                       decoration: BoxDecoration(
@@ -94,7 +96,9 @@ class _VideoAlbumListState extends State<VideoAlbumList> {
                                       decorationStyle:
                                           TextDecorationStyle.dotted),
                                 ),
-                              ])))));
+                              ]))))),
+                ],
+              );
             },
             itemCount: _playList?.items?.length ?? 0,
           )),
