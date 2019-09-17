@@ -10,6 +10,7 @@ class VideoListItem extends StatefulWidget {
   VideoListItem({Key key, this.playListId}) : super(key: key);
 
   String playListId;
+  String _playingVideoId;
 
   @override
   _VideoListItemState createState() => _VideoListItemState();
@@ -18,6 +19,9 @@ class VideoListItem extends StatefulWidget {
 class _VideoListItemState extends State<VideoListItem> {
   PlayListItem _playListItem;
 
+  String _playingVideoId;
+  
+
   @override
   void initState() {
     super.initState();
@@ -25,14 +29,6 @@ class _VideoListItemState extends State<VideoListItem> {
       setState(() {
         _playListItem = result;
       });
-      try {
-        for (var items in _playListItem.items) {
-          // log('playList items title: ${items.snippet.title}');
-          // log('playList items description: ${items.snippet.title}');
-          // log('playlist video id = ${items.snippet.resourceId.videoId}');
-          // log('defaultImage = ${items.snippet.thumbnails.defaultImage.url}');
-        }
-      } catch (e) {}
     });
   }
 
@@ -44,11 +40,9 @@ class _VideoListItemState extends State<VideoListItem> {
   }
 
   void _navigateYTPlayer(String videoId) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => WebViewContainer(videoId: videoId)),
-    );
+    setState(() {
+      _playingVideoId = videoId;
+    });
   }
 
   @override
@@ -57,18 +51,32 @@ class _VideoListItemState extends State<VideoListItem> {
       appBar: AppBar(
         title: Text('Video List'),
       ),
-      body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          var data = _playListItem.items[index];
+      body: new Column(
+        children: <Widget>[
+          _playingVideoId != null ? WebViewYoutubePlayer(videoId: _playingVideoId) : Text('choose a song..'),
+          // WebViewYoutubePlayer(videoId: _playingVideoId),
+          new Expanded(
+            child: ListView.builder(
+              itemBuilder: (BuildContext context, int index) {
+                if (_playListItem == null ||
+                    _playListItem.items == null ||
+                    _playListItem.items[index] == null) {
+                  return Text('loading...');
+                }
 
-          return ListTile(
-            leading:
-                new Image.network(data.snippet.thumbnails.defaultImage.url),
-            title: Text(data.snippet.title),
-            onTap: () => onTapped(index),
-          );
-        },
-        itemCount: _playListItem.items.length,
+                var data = _playListItem.items[index];
+
+                return ListTile(
+                  leading: new Image.network(
+                      data.snippet.thumbnails.defaultImage.url),
+                  title: Text(data.snippet.title),
+                  onTap: () => onTapped(index),
+                );
+              },
+              itemCount: _playListItem?.items?.length ?? 0,
+            ),
+          )
+        ],
       ),
     );
   }

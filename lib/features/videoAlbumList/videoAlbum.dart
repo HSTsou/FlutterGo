@@ -22,18 +22,13 @@ class _VideoAlbumListState extends State<VideoAlbumList> {
       setState(() {
         _playList = result;
       });
-      for (var items in result.items) {
-        // print('playlist id = ${items.id}');
-        // print('title = ${items.snippet.title}');
-        // print('defaultImage = ${items.snippet.thumbnails.defaultImage.url}');
-      }
     });
   }
 
   void onTapped(index) {
     // navigate to the next screen.
     var id = _playList.items[index].id;
-    print('ffffff playList id = $id');
+    // print('ffffff playList id = $id');
     // getYoutubePlayListItem(id);
     _navigateVideoList(id);
   }
@@ -51,23 +46,58 @@ class _VideoAlbumListState extends State<VideoAlbumList> {
       appBar: AppBar(
         title: Text('Album'),
       ),
-      body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          var data = _playList.items[index];
+      body: new Container(
+          margin: const EdgeInsets.only(left: 16.0, right: 16.0),
+          child: GridView.builder(
+            reverse: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, childAspectRatio: 1.0),
+            itemBuilder: (BuildContext context, int index) {
+              if (_playList == null ||
+                  _playList.items == null ||
+                  _playList.items[index] == null ||
+                  _playList.items.length == 0) {
+                return Text('loading...');
+              }
 
-          if (data == null) {
-            return Text('loading...');
-          }
+              var data = _playList.items[index];
 
-          return ListTile(
-            leading:
-                new Image.network(data.snippet.thumbnails.defaultImage.url),
-            title: Text(data.snippet.title),
-            onTap: () => onTapped(index),
-          );
-        },
-        itemCount: _playList.items.length,
-      ),
+              return ClipRRect(
+                  borderRadius: BorderRadius.circular(5.0),
+                  child: DecoratedBox(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4.0), //3像素圆角
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.white,
+                                offset: Offset(2.0, 2.0),
+                                blurRadius: 2.0)
+                          ]),
+                      child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 24.0),
+                          child: GestureDetector(
+                              onTap: () => onTapped(index),
+                              child: new Column(children: <Widget>[
+                                new Image.network(
+                                    data.snippet.thumbnails.defaultImage.url),
+                                new Text(
+                                  '${data.snippet.title}',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.black,
+
+                                      // fontFamily: "Courier",
+                                      // background: new Paint()
+                                      //   ..color = Colors.black54,
+                                      decoration: TextDecoration.none,
+                                      decorationStyle:
+                                          TextDecorationStyle.dotted),
+                                ),
+                              ])))));
+            },
+            itemCount: _playList?.items?.length ?? 0,
+          )),
     );
   }
 }
