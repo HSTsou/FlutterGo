@@ -1,6 +1,7 @@
 google sign in,
 youtube data api,
 webview youtube player,
+mobx,
 
-mobx
-![image](picture or gif url)
+![image](https://github.com/HSTsou/FlutterGo/blob/master/youtube_album.png)
+![image](https://github.com/HSTsou/FlutterGo/blob/master/player_view.png)
