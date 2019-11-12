@@ -1,7 +1,7 @@
 google sign in,
 youtube data api,
-webview youtube player,
-<br>mobx,
+youtube player build by webview,
+<br>mobx for statemanagment,
 
-<div style="width:50%">![image](https://github.com/HSTsou/FlutterGo/blob/master/youtube_album.png)</div>
-<div style="width:50%">![image](https://github.com/HSTsou/FlutterGo/blob/master/player_view.png)</div>
+<img src="https://github.com/HSTsou/FlutterGo/blob/master/youtube_album.png" width="200" >
+<img src="https://github.com/HSTsou/FlutterGo/blob/master/player_view.png" width="200">
