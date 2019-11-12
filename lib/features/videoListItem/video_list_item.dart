@@ -51,29 +51,31 @@ class _VideoListItemState extends State<VideoListItem> {
       appBar: AppBar(
         title: Text('Video List'),
       ),
-      body: new Column(
+      body: Column(
         children: <Widget>[
           _playingVideoId != null ? WebViewYoutubePlayer(videoId: _playingVideoId) : Text('choose a song..'),
           // WebViewYoutubePlayer(videoId: _playingVideoId),
-          new Expanded(
-            child: ListView.builder(
-              itemBuilder: (BuildContext context, int index) {
-                if (_playListItem == null ||
-                    _playListItem.items == null ||
-                    _playListItem.items[index] == null) {
-                  return Text('loading...');
-                }
+          Expanded(
+            child: SafeArea(
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  if (_playListItem == null ||
+                      _playListItem.items == null ||
+                      _playListItem.items[index] == null) {
+                    return Text('loading...');
+                  }
 
-                var data = _playListItem.items[index];
+                  var data = _playListItem.items[index];
 
-                return ListTile(
-                  leading: new Image.network(
-                      data.snippet.thumbnails.defaultImage.url),
-                  title: Text(data.snippet.title),
-                  onTap: () => onTapped(index),
-                );
-              },
-              itemCount: _playListItem?.items?.length ?? 0,
+                  return ListTile(
+                    leading: Image.network(
+                        data.snippet.thumbnails.defaultImage.url),
+                    title: Text(data.snippet.title),
+                    onTap: () => onTapped(index),
+                  );
+                },
+                itemCount: _playListItem?.items?.length ?? 0,
+              ),
             ),
           )
         ],

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
-      home: MyHomePage(title: 'Flutter GO'),
+      home: MyHomePage(title: 'Youtube Collection'),
     );
   }
 }
