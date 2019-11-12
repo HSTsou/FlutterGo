@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import "package:http/http.dart" as http;
+import 'package:mobx/mobx.dart';
 import 'dart:convert' show json;
-import 'DiamondBorder.dart';
+import 'diamond_border.dart';
 import 'package:flutter_go/network/youtubeAPIService.dart';
 import 'package:flutter_go/features/login/googleLoginButton.dart';
 import 'package:flutter_go/features/videoAlbumList/videoAlbum.dart';
+import './home_store.dart';
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: [
@@ -17,15 +20,6 @@ GoogleSignIn _googleSignIn = GoogleSignIn(
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
   GoogleSignIn _googleSignIn;
@@ -40,11 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
   String goolgeLoginButtonText = 'Login';
   String _accessToken;
 
+  final homeStore = HomeStore();
+  ReactionDisposer disposer;
+
   @override
   void initState() {
     super.initState();
     _googleSignIn.onCurrentUserChanged.listen((GoogleSignInAccount account) {
-      print('onCurrentUserChanged ${account.authentication}');
+      // print('onCurrentUserChanged ${account.authentication}');
       setState(() {
         _currentUser = account;
       });
@@ -61,15 +58,21 @@ class _MyHomePageState extends State<MyHomePage> {
             goolgeLoginButtonText = "Logout";
           }
         });
-
-        // getYoutubePlayList(googleKey.accessToken);
       }).catchError((err) {
         print('inner error');
       });
     }).catchError((err) {
       print('error occured');
     });
-    ;
+
+    disposer = autorun((_) {
+      print(homeStore.userName);
+    });
+  }
+
+  @override
+  void dispose() {
+    disposer();
   }
 
   Future<void> _handleGetContact() async {
@@ -93,13 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final Map<String, dynamic> data = json.decode(response.body);
     final String namedContact = _pickFirstNamedContact(data);
-    setState(() {
-      if (namedContact != null) {
-        _contactText = "I see you know $namedContact!";
-      } else {
-        _contactText = "No contacts to display.";
-      }
-    });
+    homeStore.setUserName(namedContact);
   }
 
   String _pickFirstNamedContact(Map<String, dynamic> data) {
@@ -140,15 +137,12 @@ class _MyHomePageState extends State<MyHomePage> {
       _googleSignIn.signIn().then((result) {
         result.authentication.then((googleKey) {
           print('accessToken = ' + googleKey.accessToken);
-          // print('idToken = ' + googleKey.idToken);
-          // print('user displayName = ' + _googleSignIn.currentUser.displayName);
           setState(() {
             if (googleKey.accessToken != null) {
               _accessToken = googleKey.accessToken;
               goolgeLoginButtonText = "Logout";
             }
           });
-
           // getYoutubePlayList(googleKey.accessToken);
         }).catchError((err) {
           print('inner error');
@@ -181,7 +175,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             GoogleSignInButton(
                 text: goolgeLoginButtonText, onPressed: _clickLoginButton),
-            Text('$_contactText'),
+            Observer(builder: (_) {
+              return Text(homeStore.userName);
+            }),
           ],
         ),
       ),
@@ -189,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           _navigateVideoAlbum(context);
         },
-        tooltip: 'Increment',
+        tooltip: 'go to video album',
         child: Icon(Icons.library_music),
         shape: DiamondBorder(),
       ), // This trailing comma makes auto-formatting nicer for build methods.

@@ -29,12 +29,6 @@ Future<PlayList> getYoutubePlayList(String accessToken) async {
   String rawJson = '${response.body}';
   Map<String, dynamic> map = jsonDecode(rawJson);
   PlayList playList = PlayList.fromJson(map);
-  // for (var items in playList.items) {
-  //   log('playList items: ${items.snippet.title}');
-  //   print('playlist id = ${items.id}' );
-  //   print('title = ${items.snippet.title}');
-  //   print('defaultImage = ${items.snippet.thumbnails.defaultImage.url}');
-  // }
 
   return playList;
 }
@@ -48,18 +42,10 @@ Future<PlayListItem> getYoutubePlayListItem(String playlistId) async {
     return null ;
   }
 
-  log('item: ${response.body}');
+  // log('item: ${response.body}');
   String rawJson = '${response.body}';
   Map<String, dynamic> map = jsonDecode(rawJson);
   PlayListItem playListItem = PlayListItem.fromJson(map);
-
+  
   return playListItem;
-  // try {
-  //   for (var items in playListItem.items) {
-  //     log('playList items title: ${items.snippet.title}');
-  //     log('playList items description: ${items.snippet.title}');
-  //     log('playlist video id = ${items.snippet.resourceId.videoId}');
-  //     log('defaultImage = ${items.snippet.thumbnails.defaultImage.url}');
-  //   }
-  // } catch (e) {}
 }

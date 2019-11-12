@@ -26,10 +26,7 @@ class _VideoAlbumListState extends State<VideoAlbumList> {
   }
 
   void onTapped(index) {
-    // navigate to the next screen.
     var id = _playList.items[index].id;
-    // print('ffffff playList id = $id');
-    // getYoutubePlayListItem(id);
     _navigateVideoList(id);
   }
 
