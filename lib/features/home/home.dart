@@ -5,9 +5,9 @@ import "package:http/http.dart" as http;
 import 'package:mobx/mobx.dart';
 import 'dart:convert' show json;
 import 'diamond_border.dart';
-import 'package:flutter_go/network/youtubeAPIService.dart';
-import 'package:flutter_go/features/login/googleLoginButton.dart';
-import 'package:flutter_go/features/videoAlbumList/videoAlbum.dart';
+import 'package:flutter_go/network/youtube_api_service.dart';
+import 'package:flutter_go/features/login/google_login_button.dart';
+import 'package:flutter_go/features/videoAlbumList/video_album.dart';
 import './home_store.dart';
 
 GoogleSignIn _googleSignIn = GoogleSignIn(

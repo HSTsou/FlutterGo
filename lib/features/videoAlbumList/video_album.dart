@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_go/features/videoListItem/videoListItem.dart';
-import 'package:flutter_go/model/playList.dart';
-import 'package:flutter_go/network/youtubeAPIService.dart';
+import 'package:flutter_go/features/videoListItem/video_list_item.dart';
+import 'package:flutter_go/model/play_list.dart';
+import 'package:flutter_go/network/youtube_api_service.dart';
 
 class VideoAlbumList extends StatefulWidget {
   VideoAlbumList({Key key, this.accessToken}) : super(key: key);
@@ -60,6 +60,7 @@ class _VideoAlbumListState extends State<VideoAlbumList> {
               var data = _playList.items[index];
 
               return Wrap(
+                alignment: WrapAlignment.center,
                 children: <Widget>[
                   ClipRRect(
                   borderRadius: BorderRadius.circular(5.0),

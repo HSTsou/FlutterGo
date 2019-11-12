@@ -176,10 +176,10 @@ class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
   @override
   void didUpdateWidget(WebViewYoutubePlayer oldWidget) {
     super.didUpdateWidget(oldWidget);
-    print('didUpdateWidget');
+    // print('didUpdateWidget');
     if (oldWidget.videoId != widget.videoId) {
-      print('oldWidget  = ${oldWidget.videoId}');
-      print('widget ${widget.videoId}');
+      // print('oldWidget  = ${oldWidget.videoId}');
+      // print('widget ${widget.videoId}');
       setState(() {
         _playingUrl = '$_url${widget.videoId}';
       });

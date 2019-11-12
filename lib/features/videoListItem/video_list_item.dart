@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_go/model/playList.dart';
-import 'package:flutter_go/model/playListItem.dart';
-import 'package:flutter_go/network/youtubeAPIService.dart';
-import 'package:flutter_go/widgets/webviewYoutubePlayer.dart';
+import 'package:flutter_go/model/play_list.dart';
+import 'package:flutter_go/model/play_list_item.dart';
+import 'package:flutter_go/network/youtube_api_service.dart';
+import 'package:flutter_go/widgets/webview_youtube_player.dart';
 
 class VideoListItem extends StatefulWidget {
   VideoListItem({Key key, this.playListId}) : super(key: key);

@@ -1,6 +1,6 @@
 import "dart:async";
-import 'package:flutter_go/model/playList.dart';
-import 'package:flutter_go/model/playListItem.dart';
+import 'package:flutter_go/model/play_list.dart';
+import 'package:flutter_go/model/play_list_item.dart';
 import "package:http/http.dart" as http;
 import 'dart:developer';
 import 'dart:convert';
