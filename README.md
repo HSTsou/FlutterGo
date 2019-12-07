@@ -1,3 +1,5 @@
+Login you google account and then login your youtube data to show the video.
+Tec Stack: <br>
 google sign in,
 youtube data api,
 youtube player build by webview,
