@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/zouhansheng/Develop/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_crashlytics-1.0.0/ios/Classes/FlutterCrashlyticsPlugin.m \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Target\ Support\ Files/flutter_crashlytics/flutter_crashlytics-prefix.pch \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Fabric/iOS/Fabric.framework/Headers/Fabric.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Fabric/iOS/Fabric.framework/Headers/FABAttributes.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Crashlytics.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSAttributes.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSLogging.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSReport.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSStackFrame.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Answers.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/ANSCompatibility.h \
+  /Users/zouhansheng/Develop/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_crashlytics-1.0.0/ios/Classes/FlutterCrashlyticsPlugin.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Modules/module.modulemap \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterTexture.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterPlugin.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterMacros.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterEngine.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterDartProject.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterBinaryMessenger.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterViewController.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterPlatformViews.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterCodecs.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterChannels.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterCallbackCache.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterAppDelegate.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/Flutter.h

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_go/features/ipod/IPodView.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import "package:http/http.dart" as http;
@@ -159,7 +160,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => VideoAlbumList(accessToken: _accessToken)),
+//          builder: (context) => VideoAlbumList(accessToken: _accessToken)),
+          builder: (context) => IPodView(accessToken: _accessToken)),
     );
   }
 
