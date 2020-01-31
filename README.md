@@ -1,16 +1,12 @@
-# flutter_go
+Login google account and then take your youtube data to show the video.
+<br>
+<br>
+Tec Stack: 
+<br>
+google sign in,
+youtube data api,
+youtube player build by webview,
+<br>mobx for statemanagment
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/HSTsou/FlutterGo/blob/master/youtube_album.png" width="200" >
+<img src="https://github.com/HSTsou/FlutterGo/blob/master/player_view.png" width="200">
