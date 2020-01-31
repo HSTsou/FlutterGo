@@ -89,7 +89,7 @@ class _IPodViewState extends State<IPodView> {
                           child: Text(
                             'MENU',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           alignment: Alignment.topCenter,
                           margin: EdgeInsets.only(top: 16),
@@ -127,7 +127,7 @@ class _IPodViewState extends State<IPodView> {
                             onPressed: () => onTapped(currentPage.toInt()),
                           ),
                           alignment: Alignment.bottomCenter,
-                          margin: EdgeInsets.only(bottom: 8),
+                          margin: EdgeInsets.only(bottom: 4),
                         )
                       ]),
                     ),
