@@ -230,6 +230,11 @@ class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
         onPlayStateChanged(int.parse(value));
         break;
 
+      case "onPlayerError":
+        //TODO just play next one.
+        widget.onVideoEnd();
+        break;
+
       default:
         break;
     }

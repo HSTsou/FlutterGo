@@ -5,7 +5,7 @@ class YoutubeDataUtils {
   static final String sdDefault = "sddefault";
   static final String maxResDefault = "maxresdefault";
 
-  // TODO
+  // TODO https://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
   static String getVideoImageUrl(String vId, {String level = "default"}) {
     String url = "";
     switch (level) {

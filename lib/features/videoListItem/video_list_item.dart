@@ -79,11 +79,14 @@ class _VideoListItemState extends State<VideoListItem> {
 
                   var data = _playListItem.items[index];
 
-                  return ListTile(
-                    leading:
-                        Image.network(data.snippet.thumbnails.defaultImage.url),
-                    title: Text(data.snippet.title),
-                    onTap: () => onTapped(index),
+                  return Container(
+                    color: _playingVideoIndex == index ? Colors.purple : Colors.transparent,
+                    child: ListTile(
+                      leading:
+                          Image.network(data.snippet.thumbnails.defaultImage.url),
+                      title: Text(data.snippet.title),
+                      onTap: () => onTapped(index),
+                    ),
                   );
                 },
                 itemCount: _playListItem?.items?.length ?? 0,

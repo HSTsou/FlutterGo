@@ -35,7 +35,7 @@ Future<PlayList> getYoutubePlayList(String accessToken) async {
 
 Future<PlayListItem> getYoutubePlayListItem(String playlistId) async {
   final http.Response response = await http.get(
-      '$YOUTUBE_DATA_PLAYLIST_ITEMS_URL?part=snippet&maxResults=30&playlistId=$playlistId&key=$YOUTUBE_DATA_API_KEY');
+      '$YOUTUBE_DATA_PLAYLIST_ITEMS_URL?part=snippet&maxResults=50&playlistId=$playlistId&key=$YOUTUBE_DATA_API_KEY');
   if (response.statusCode != 200) {
     print(
         'getYoutubePlayListItem failed ${response.statusCode} response: ${response.body}');

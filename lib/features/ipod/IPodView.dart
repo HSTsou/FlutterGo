@@ -193,5 +193,4 @@ class _IPodViewState extends State<IPodView> {
       MaterialPageRoute(builder: (context) => VideoListItem(playListId: id)),
     );
   }
-
 }
