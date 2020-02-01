@@ -25,7 +25,7 @@ Future<PlayList> getYoutubePlayList(String accessToken) async {
     return null;
   }
 
-  log('item: ${response.body}');
+//  log('item: ${response.body}');
   String rawJson = '${response.body}';
   Map<String, dynamic> map = jsonDecode(rawJson);
   PlayList playList = PlayList.fromJson(map);

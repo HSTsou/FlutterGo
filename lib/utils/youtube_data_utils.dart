@@ -5,25 +5,14 @@ class YoutubeDataUtils {
   static final String sdDefault = "sddefault";
   static final String maxResDefault = "maxresdefault";
 
-  static String getVideoImageUrl(String vId, {String level}) {
+  // TODO
+  static String getVideoImageUrl(String vId, {String level = "default"}) {
     String url = "";
     switch (level) {
-      case xDefault:
-        {
-
-        }
-        break;
-
-      case constant_expr2:
-        {
-          //statements;
-        }
+      case "default":
         break;
 
       default:
-        {
-          //statements;
-        }
         break;
     }
   }

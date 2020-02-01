@@ -3,14 +3,10 @@ import 'dart:convert';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewYoutubePlayer extends StatefulWidget {
-  WebViewYoutubePlayer({this.videoId});
-  var videoId;
+  WebViewYoutubePlayer({this.videoId, this.onVideoEnd});
 
-  static const onPlayerReady = 'onPlayerReady';
-  static const onPlayerStateChange = 'onPlayerStateChange';
-  static const onPlayerError = 'onPlayerError';
-  static const playVideo = 'playVideo';
-  static const pauseVideo = 'pauseVideo';
+  var videoId;
+  final Function onVideoEnd;
 
   @override
   createState() => _WebViewYoutubePlayerState();
@@ -19,12 +15,13 @@ class WebViewYoutubePlayer extends StatefulWidget {
 class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
   var _url = 'https://movie2019.appspot.com/?video_id=';
   var _playingUrl = '';
-  var videoId;
+
   double currentTime = 0;
   bool _isPlaying = false;
   double _screenOpacity = 0;
   var _webViewController;
   final _key = UniqueKey();
+
   _WebViewYoutubePlayerState();
 
   onClickScreen() {
@@ -96,7 +93,7 @@ class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
     String run = 'handleReactNativeMessage($dataJson)';
 
     _webViewController?.evaluateJavascript(run)?.then((result) {
-      print('run result');
+//      print('run result');
     });
   }
 
@@ -176,10 +173,8 @@ class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
   @override
   void didUpdateWidget(WebViewYoutubePlayer oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // print('didUpdateWidget');
+
     if (oldWidget.videoId != widget.videoId) {
-      // print('oldWidget  = ${oldWidget.videoId}');
-      // print('widget ${widget.videoId}');
       setState(() {
         _playingUrl = '$_url${widget.videoId}';
       });
@@ -203,14 +198,7 @@ class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
                   JavascriptChannel(
                       name: 'ReactNativeWebView',
                       onMessageReceived: (JavascriptMessage message) {
-                        print(message.message);
-                        if (message.message == 'onPlayerReady_') {
-                          playVideo();
-                        } else if (message.message
-                            .contains('getCurrentTime_')) {
-                          var time = message.message.split('_');
-                          currentTime = double.parse(time[1]);
-                        }
+                        onWebViewMessageReceived(message);
                       })
                 ]),
                 onWebViewCreated: (WebViewController w) {
@@ -221,5 +209,53 @@ class _WebViewYoutubePlayerState extends State<WebViewYoutubePlayer> {
             ])),
       ],
     ));
+  }
+
+  void onWebViewMessageReceived(JavascriptMessage message) {
+    print(message.message);
+    var msg = message.message.split('_');
+    String title = msg[0];
+    String value = msg[1];
+
+    switch (title) {
+      case "onPlayerReady":
+        playVideo();
+        break;
+
+      case "getCurrentTime":
+        currentTime = double.parse(value);
+        break;
+
+      case "onPlayerStateChange":
+        onPlayStateChanged(int.parse(value));
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  /// https://developers.google.com/youtube/iframe_api_reference#Playback_status
+  ///    -1 – unstarted
+  ///     0 – ended
+  ///     1 – playing
+  ///     2 – paused
+  ///     3 – buffering
+  ///     5 – video cued
+  void onPlayStateChanged(int state) {
+    switch (state) {
+      case 0:
+        widget.onVideoEnd();
+        break;
+
+      case 3:
+        break;
+
+      case 5:
+        break;
+
+      default:
+        break;
+    }
   }
 }
