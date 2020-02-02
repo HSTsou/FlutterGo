@@ -8,5 +8,5 @@ youtube data api,
 youtube player build by webview,
 <br>mobx for statemanagment
 
-<img src="https://github.com/HSTsou/FlutterGo/blob/master/ipodview_album.png" width="200" >
-<img src="https://github.com/HSTsou/FlutterGo/blob/master/playlist_player.png" width="200">
+<img src="https://github.com/HSTsou/FlutterGo/blob/master/ipod_view_01.png" width="200" >
+<img src="https://github.com/HSTsou/FlutterGo/blob/master/video_list_01.png" width="200">
