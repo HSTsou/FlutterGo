@@ -29,6 +29,19 @@ class _VideoListItemState extends State<VideoListItem> {
     }).then((value) => this.onTapped(0));
   }
 
+
+  @override
+  void didUpdateWidget(VideoListItem oldWidget) {
+    if(oldWidget.playListId != widget.playListId){
+      print("reload");
+      getYoutubePlayListItem(widget.playListId).then((result) {
+        setState(() {
+          _playListItem = result;
+        });
+      }).then((value) => this.onTapped(0));
+    }
+  }
+
   void onTapped(index) {
     var id = _playListItem?.items[index]?.snippet?.resourceId?.videoId;
     print('onTapped playListItem video id = $id');
@@ -47,7 +60,8 @@ class _VideoListItemState extends State<VideoListItem> {
 
   void onVideoEndCallback() {
     int nextVideoIndex = _playingVideoIndex % (_playListItem.items.length - 1);
-    if (nextVideoIndex == 0) {
+    bool lastOne = _playingVideoIndex == (_playListItem.items.length - 1);
+    if (nextVideoIndex == 0 && lastOne) {
       onTapped(0);
       return;
     }
@@ -57,9 +71,9 @@ class _VideoListItemState extends State<VideoListItem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Video List'),
-      ),
+//      appBar: AppBar(
+//        title: Text('Video List'),
+//      ),
       body: Column(
         children: <Widget>[
           _playingVideoId != null
