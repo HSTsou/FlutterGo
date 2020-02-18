@@ -46,16 +46,16 @@ mixin _$HomeStore on _HomeStore, Store {
   final _$currentUserAtom = Atom(name: '_HomeStore.currentUser');
 
   @override
-  GoogleSignInAccount get currentUser {
+  GoogleSignInAccount get googleCurrentUser {
     _$currentUserAtom.context.enforceReadPolicy(_$currentUserAtom);
     _$currentUserAtom.reportObserved();
-    return super.currentUser;
+    return super.googleCurrentUser;
   }
 
   @override
-  set currentUser(GoogleSignInAccount value) {
+  set googleCurrentUser(GoogleSignInAccount value) {
     _$currentUserAtom.context.conditionallyRunInAction(() {
-      super.currentUser = value;
+      super.googleCurrentUser = value;
       _$currentUserAtom.reportChanged();
     }, _$currentUserAtom, name: '${_$currentUserAtom.name}_set');
   }

@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-//          builder: (context) => VideoAlbumList(accessToken: _accessToken)),
           builder: (context) => IPodView(accessToken: homeStore.accessToken)),
     );
   }

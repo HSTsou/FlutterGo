@@ -27,7 +27,7 @@ abstract class _HomeStore with Store {
   String loginStatusMsg = 'Login';
 
   @observable
-  GoogleSignInAccount currentUser;
+  GoogleSignInAccount googleCurrentUser;
 
   @observable
   String accessToken;
@@ -57,7 +57,7 @@ abstract class _HomeStore with Store {
 
   @action
   void setCurrentUser(GoogleSignInAccount currentUser) {
-    this.currentUser = currentUser;
+    this.googleCurrentUser = currentUser;
   }
 
   @action
@@ -91,7 +91,7 @@ abstract class _HomeStore with Store {
 
   @action
   Future<void> clickLoginButton() async {
-    if (currentUser != null) {
+    if (googleCurrentUser != null) {
       _googleSignIn.signOut().then((result) {
         setLoginStatusMsg("Login");
         setUserName("");
@@ -128,7 +128,7 @@ abstract class _HomeStore with Store {
     final http.Response response = await http.get(
       'https://people.googleapis.com/v1/people/me/connections'
       '?requestMask.includeField=person.names',
-      headers: await currentUser.authHeaders,
+      headers: await googleCurrentUser.authHeaders,
     );
 
     if (response.statusCode != 200) {
