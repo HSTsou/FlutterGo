@@ -2,9 +2,10 @@ dependencies: \
   /Users/zouhansheng/Develop/flutter_go/ios/Runner/GeneratedPluginRegistrant.m \
   /Users/zouhansheng/Develop/flutter_go/ios/Runner/GeneratedPluginRegistrant.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Modules/module.modulemap \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/webview_flutter.modulemap \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/google_sign_in/google_sign_in.modulemap \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterTexture.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterPlugin.h \
-  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterMacros.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterEngine.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterDartProject.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterBinaryMessenger.h \
@@ -12,11 +13,18 @@ dependencies: \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterPlatformViews.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
-  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterCodecs.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterChannels.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterCallbackCache.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterCodecs.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterMacros.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/FlutterAppDelegate.h \
   /Users/zouhansheng/Develop/flutter_go/ios/.symlinks/flutter/ios/Flutter.framework/Headers/Flutter.h \
   /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/flutter_crashlytics/FlutterCrashlyticsPlugin.h \
-  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/google_sign_in/GoogleSignInPlugin.h \
-  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/WebViewFlutterPlugin.h
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/google_sign_in/FLTGoogleSignInPlugin.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/google_sign_in/google_sign_in-umbrella.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/FLTWebViewFlutterPlugin.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/JavaScriptChannelHandler.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/FlutterWebView.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/FLTWKNavigationDelegate.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/FLTCookieManager.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Public/webview_flutter/webview_flutter-umbrella.h

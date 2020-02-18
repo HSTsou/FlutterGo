@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/GTMAppAuth/Source/GTMAppAuthFetcherAuthorization.m \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Target\ Support\ Files/GTMAppAuth/GTMAppAuth-prefix.pch \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/GTMAppAuth/Source/GTMAppAuthFetcherAuthorization.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcher.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/AppAuthCore.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDAuthState.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDAuthStateChangeDelegate.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDAuthStateErrorDelegate.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDAuthorizationRequest.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDExternalUserAgentRequest.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDResponseTypes.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDScopes.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDAuthorizationResponse.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDAuthorizationService.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDError.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDErrorUtilities.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDExternalUserAgent.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDExternalUserAgentSession.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDGrantTypes.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDIDToken.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDRegistrationRequest.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDRegistrationResponse.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDScopeUtilities.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDServiceConfiguration.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDServiceDiscovery.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDTokenRequest.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDTokenResponse.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDTokenUtilities.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDURLSessionProvider.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDEndSessionRequest.h \
+  /Users/zouhansheng/Develop/flutter_go/ios/Pods/Headers/Private/AppAuth/OIDEndSessionResponse.h
