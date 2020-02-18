@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/features/ipod/ipod_view.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import "package:http/http.dart" as http;
 import 'package:mobx/mobx.dart';
-import 'dart:convert' show json;
 import 'diamond_border.dart';
 import 'package:flutter_go/features/login/google_login_button.dart';
 import './home_store.dart';
