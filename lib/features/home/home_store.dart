@@ -21,7 +21,7 @@ abstract class _HomeStore with Store {
   List<StreamSubscription> _subscriptions;
 
   @observable
-  String userName = 'login...';
+  String userName = 'please login';
 
   @observable
   String loginStatusMsg = 'Login';
@@ -79,12 +79,14 @@ abstract class _HomeStore with Store {
   @action
   Future<StreamSubscription> _setUpLoginSilently() async {
     var result = await _googleSignIn.signInSilently();
-    return result.authentication.then((googleKey) {
+
+
+    return result?.authentication?.then((googleKey) {
       if (googleKey.accessToken != null) {
         setAccessToken(googleKey.accessToken);
         setLoginStatusMsg("Logout");
       }
-    }).catchError((err) {
+    })?.catchError((err) {
       print('inner error');
     });
   }

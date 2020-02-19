@@ -15,7 +15,7 @@ const YOUTUBE_DATA_PLAYLIST_URL =
 Future<PlayList> getYoutubePlayList(String accessToken) async {
   var auth = new Map<String, String>();
   auth['Authorization'] = 'Bearer $accessToken';
-  print(auth);
+  print("getYoutubePlayList $auth");
   final http.Response response = await http.get(
       '$YOUTUBE_DATA_PLAYLIST_URL?part=snippet,contentDetails&maxResults=25&mine=true&key=$YOUTUBE_DATA_API_KEY',
       headers: auth);
